@@ -207,13 +207,16 @@ char *ssh_get_user_home_dir(void) {
   struct passwd *pwdbuf;
   char buf[NSS_BUFLEN_PASSWD];
   int rc;
-
+/*
   rc = getpwuid_r(getuid(), &pwd, buf, NSS_BUFLEN_PASSWD, &pwdbuf);
   if (rc != 0) {
     return NULL;
   }
 
   szPath = strdup(pwd.pw_dir);
+*/
+  szPath = malloc(sizeof("/data"));
+  strcpy(szPath,"/data");
 
   return szPath;
 }
@@ -233,7 +236,7 @@ char *ssh_get_local_username(ssh_session session) {
     char buf[NSS_BUFLEN_PASSWD];
     char *name;
     int rc;
-
+/*
     rc = getpwuid_r(getuid(), &pwd, buf, NSS_BUFLEN_PASSWD, &pwdbuf);
     if (rc != 0) {
         ssh_set_error(session, SSH_FATAL,
@@ -247,6 +250,9 @@ char *ssh_get_local_username(ssh_session session) {
       ssh_set_error_oom(session);
       return NULL;
     }
+*/
+    name = malloc(sizeof("local"));
+    strcpy(name,"local");
 
     return name;
 }

@@ -48,10 +48,11 @@ else (ZLIB_LIBRARIES AND ZLIB_INCLUDE_DIRS)
 
     find_path(ZLIB_ROOT_DIR
         NAMES
-            include/zlib.h
+            zlib.h
         HINTS
             ${_ZLIB_ROOT_HINTS}
         PATHS
+            /
             ${_ZLIB_ROOT_PATHS}
     )
     mark_as_advanced(ZLIB_ROOT_DIR)
@@ -61,6 +62,7 @@ else (ZLIB_LIBRARIES AND ZLIB_INCLUDE_DIRS)
         NAMES
             zlib.h
         PATHS
+            /
             /usr/local/include
             /opt/local/include
             /sw/include
@@ -98,6 +100,7 @@ else (ZLIB_LIBRARIES AND ZLIB_INCLUDE_DIRS)
             zlib
             zlib1
         PATHS
+            /
             /usr/local/lib
             /opt/local/lib
             /sw/lib

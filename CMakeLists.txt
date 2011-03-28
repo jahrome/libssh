@@ -78,14 +78,6 @@ add_subdirectory(src)
 
 # pkg-config file
 configure_file(libssh.pc.cmake ${CMAKE_CURRENT_BINARY_DIR}/libssh.pc)
-install(
-  FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/libssh.pc
-  DESTINATION
-    ${LIB_INSTALL_DIR}/pkgconfig
-  COMPONENT
-    pkgconfig
-)
 
 add_subdirectory(examples)
 

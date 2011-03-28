@@ -65,6 +65,7 @@ else (OPENSSL_LIBRARIES AND OPENSSL_INCLUDE_DIRS)
         NAMES
             openssl/ssl.h
         PATHS
+            /include
             /usr/local/include
             /opt/local/include
             /sw/include
@@ -180,6 +181,7 @@ else (OPENSSL_LIBRARIES AND OPENSSL_INCLUDE_DIRS)
                 ssleay32
                 ssleay32MD
             PATHS
+                /
                 ${_OPENSSL_LIBDIR}
                 /opt/local/lib
                 /sw/lib
@@ -191,6 +193,7 @@ else (OPENSSL_LIBRARIES AND OPENSSL_INCLUDE_DIRS)
             NAMES
                 crypto
             PATHS
+                /
                 ${_OPENSSL_LIBDIR}
                 /opt/local/lib
                 /sw/lib
