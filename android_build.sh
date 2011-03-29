@@ -3,3 +3,4 @@ cd build
 cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=../Android.cmake -DHAVE_POLL=1 -DHAVE_GETADDRINFO=1  ..
 make
 arm-linux-androideabi-strip src/libssh.so
+cp src/libssh.so ../../../out/target/product/vision/system/lib/

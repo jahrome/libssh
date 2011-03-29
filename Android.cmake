@@ -4,8 +4,8 @@ SET(CMAKE_SYSTEM_NAME Android)
 SET(CMAKE_SYSTEM_VERSION 1)
 
 # specify the cross compiler
-SET(CMAKE_C_COMPILER   agcc2)
-SET(CMAKE_CXX_COMPILER ag++2)
+SET(CMAKE_C_COMPILER   agcc3)
+SET(CMAKE_CXX_COMPILER ag++3)
 
 # where is the target environment 
 SET(CMAKE_FIND_ROOT_PATH /home/jer/cm7/out/target/product/vision/system/lib /home/jer/cm7/external/zlib /home/jer/cm7/external/openssl)
