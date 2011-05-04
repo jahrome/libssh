@@ -208,12 +208,8 @@ char *ssh_get_user_home_dir(void) {
   char buf[NSS_BUFLEN_PASSWD];
   int rc;
 
-  rc = getpwuid_r(getuid(), &pwd, buf, NSS_BUFLEN_PASSWD, &pwdbuf);
-  if (rc != 0) {
-    return NULL;
-  }
-
-  szPath = strdup(pwd.pw_dir);
+  szPath = malloc(sizeof("/data"));
+  strcpy(szPath,"/data");
 
   return szPath;
 }
@@ -234,19 +230,7 @@ char *ssh_get_local_username(ssh_session session) {
     char *name;
     int rc;
 
-    rc = getpwuid_r(getuid(), &pwd, buf, NSS_BUFLEN_PASSWD, &pwdbuf);
-    if (rc != 0) {
-        ssh_set_error(session, SSH_FATAL,
-            "Couldn't retrieve information for current user!");
-        return NULL;
-    }
-
-    name = strdup(pwd.pw_name);
-
-    if (name == NULL) {
-      ssh_set_error_oom(session);
-      return NULL;
-    }
+    strcpy(name,"local");
 
     return name;
 }

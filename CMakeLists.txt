@@ -87,8 +87,6 @@ install(
     pkgconfig
 )
 
-add_subdirectory(examples)
-
 if (WITH_TESTING)
   find_package(CMockery REQUIRED)
   include(AddCMockeryTest)
